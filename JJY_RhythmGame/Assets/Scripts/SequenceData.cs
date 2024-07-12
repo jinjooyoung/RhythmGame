@@ -66,10 +66,10 @@ public class SequenceDataEditor : Editor
 
         DrawDefaultInspector();                     //인스펙터 표시
 
-        if(sequenceData != null) 
+        if (sequenceData != null)
         {
             EditorGUILayout.LabelField("Track Notes", EditorStyles.boldLabel);
-            for(int i = 0; i< sequenceData.trackNotes.Count; i++) 
+            for (int i = 0; i < sequenceData.trackNotes.Count; i++)
             {
                 EditorGUILayout.LabelField($"Track {i + 1} : [{string.Join(",", sequenceData.trackNotes[i])}]");
             }
@@ -78,7 +78,7 @@ public class SequenceDataEditor : Editor
         if (GUILayout.Button("Load from JSON")) sequenceData.LoadFromJson();
         if (GUILayout.Button("Save to JSON")) sequenceData.SaveToJson();
 
-        if(GUI.changed)
+        if (GUI.changed)
         {
             EditorUtility.SetDirty(sequenceData);
         }
